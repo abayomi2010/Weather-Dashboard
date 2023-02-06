@@ -30,7 +30,7 @@ function renderSearchHistory () {
                btn.attr({type: "button", dataSearch :searchHistory[i]});
 
             //  give each button class = btn-history
-               btn.addClass("btn-info");
+               btn.addClass("btn-secondary");
                btn.text(searchHistory[i]); 
                searchHistoryCont.append(btn); 
             }
@@ -63,6 +63,7 @@ function renderCurrentWeather(city, weatherData) {
         let card =$("<div>");
         let cardBody = $("<div>");
         let heading = $("<h2>");
+        let description = $("<p>");
         let tempEl = $("<p>");
         let windEl = $("<p>");
         let humidityEl = $("<p>");
@@ -70,11 +71,12 @@ function renderCurrentWeather(city, weatherData) {
         let iconWeatherDescription = weatherData.weather[0].description;
 
          card.attr("class", "card");
-         cardBody.attr("class", "card-body");
+         cardBody.attr("class", "card-body btn-dark");
          card.append(cardBody);
          heading.attr("class", " h3 card-title");
          tempEl.attr("class", "card-text");
          windEl.attr("class", "card-text");
+         description.attr("class", "card-text text-uppercase .fs-3");
          humidityEl.attr("class", "card-text");
          
          heading.text(`${city} ${date}`);
@@ -84,12 +86,13 @@ function renderCurrentWeather(city, weatherData) {
          heading.append(weatherIcon);
          tempEl.text(`Temperature:  ${tempC} °C`);
          windEl.text(`Wind Speed: ${windKph} KPH`);
+         description.text(iconWeatherDescription);
          humidityEl.text(`Humidity: ${humidity}%`);
-         cardBody.append(heading, tempEl, windEl, humidityEl);
+         cardBody.append(heading, description, tempEl, windEl, humidityEl);
          todayContainer.html("");
          todayContainer.append(card);
          }
-
+         
 
 
 
@@ -137,12 +140,12 @@ function renderForecast (weatherData) {
         cardBody.append(cardTitle, weatherIcon, description, tempEl, windEl, humidityEl,);
 
         col.attr("class", "col-md");
-        card.attr("class", "card bg-secondary  h-100 text-white");
+        card.attr("class", "card bg-dark  h-100 text-white");
         cardTitle.attr("class", "card-title");
         tempEl.attr("class", "card-text .fs-1");
         windEl.attr("class", "card-text .fs-1");
         humidityEl.attr("class", "card-text .fs-1");
-        description.attr("class", "card-text text-uppercase .fs-3 bg-danger");
+        description.attr("class", "card-text text-uppercase .fs-3");
 
         
         
@@ -227,7 +230,7 @@ function initialiseSearchHistory () {
 
 
 function handleSearchHistory(event) {
-    if (!$(event.target).hasClass("btn-info")) {
+    if (!$(event.target).hasClass("btn-secondary")) {
         return;
     }
     let search = $(event.target).attr("dataSearch");
