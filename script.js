@@ -107,10 +107,12 @@ function renderForecast (weatherData) {
     
     
     let futureForecast = weatherData.filter(function (forecast) {
+        
         return forecast.dt_txt.includes("12");
     })
 
-
+    console.log(futureForecast);
+    
     for (let i = 0; i < futureForecast.length; i++) {
         let iconUrl = `https://openweathermap.org/img/wn/${futureForecast[i].weather[0]["icon"]}.png`;
         
@@ -141,7 +143,7 @@ function renderForecast (weatherData) {
         humidityEl.attr("class", "card-text");
         
 
-        cardTitle.text(moment(futureForecast[i].dt_text).format("D/M/YYYY"));  
+        cardTitle.text(moment(futureForecast[i].dt_txt).format("D/M/YYYY"));  
         weatherIcon.attr("src", iconUrl);
         weatherIcon.attr("alt", iconDescription);
         tempEl.text(`Temperature:  ${tempC} °C`);
