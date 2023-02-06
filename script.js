@@ -30,7 +30,7 @@ function renderSearchHistory () {
                btn.attr({type: "button", dataSearch :searchHistory[i]});
 
             //  give each button class = btn-history
-               btn.addClass("btn-secondary");
+               btn.addClass("btn-secondary mt-3");
                btn.text(searchHistory[i]); 
                searchHistoryCont.append(btn); 
             }
