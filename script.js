@@ -127,20 +127,24 @@ function renderForecast (weatherData) {
         let cardBody = $("<div>");
         let cardTitle = $("<h5>");
         let weatherIcon = $("<img>");
+        let description = $("<p>");
         let tempEl = $("<p>");
         let windEl = $("<p>");
         let humidityEl = $("<p>");
 
         col.append(card);
         card.append(cardBody);
-        cardBody.append(cardTitle, weatherIcon, tempEl, windEl, humidityEl);
+        cardBody.append(cardTitle, weatherIcon, description, tempEl, windEl, humidityEl,);
 
         col.attr("class", "col-md");
-        card.attr("class", "card bg-primary h-100 text-white");
+        card.attr("class", "card bg-secondary  h-100 text-white");
         cardTitle.attr("class", "card-title");
-        tempEl.attr("class", "card-text");
-        windEl.attr("class", "card-text");
-        humidityEl.attr("class", "card-text");
+        tempEl.attr("class", "card-text .fs-1");
+        windEl.attr("class", "card-text .fs-1");
+        humidityEl.attr("class", "card-text .fs-1");
+        description.attr("class", "card-text text-uppercase .fs-3 bg-danger");
+
+        
         
 
         cardTitle.text(moment(futureForecast[i].dt_txt).format("D/M/YYYY"));  
@@ -149,6 +153,8 @@ function renderForecast (weatherData) {
         tempEl.text(`Temperature:  ${tempC} °C`);
         windEl.text(`Wind Speed: ${windKph} KPH`);
         humidityEl.text(`Humidity: ${humidity}%`);
+        description.text(iconDescription);
+        
 
 
         forecastContainer.append(col);
