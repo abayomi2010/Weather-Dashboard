@@ -32,4 +32,9 @@ The following image shows the web application's appearance and functionality:
 
 ![The weather app includes a search option, a list of cities, and a five-day forecast and current weather conditions for London.](image/Weather%20Dashboard.gif)
 
+Link to the GitHub [repository](https://github.com/abayomi2010/Weather-Dashboard) 
+
+
+Link to the deployed [page](https://abayomi2010.github.io/Weather-Dashboard/)
+
 
