@@ -100,22 +100,20 @@ function renderForecast (weatherData) {
     let headingCol = $("<div>");
     let heading = $("<h4>");
 
-    headingCol.attr("class", "col-12");
-    heading.text("5-Day Forecast");
-    headingCol.append(heading);
     
-    forecastContainer.html("")
-    
-    forecastContainer.append(headingCol);
     
     
     let futureForecast = weatherData.filter(function (forecast) {
+        // console.log(forecast);
         
         return forecast.dt_txt.includes("12");
+        
     })
-
-    console.log(futureForecast);
     
+    headingCol.attr("class", "col-12");
+    heading.text("5-Day Forecast");
+    headingCol.append(heading);
+    forecastContainer.append(headingCol);
     for (let i = 0; i < futureForecast.length; i++) {
         let iconUrl = `https://openweathermap.org/img/wn/${futureForecast[i].weather[0]["icon"]}.png`;
         
@@ -161,19 +159,7 @@ function renderForecast (weatherData) {
 
 
         forecastContainer.append(col);
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-
-    }
+        }
 
 }
 
