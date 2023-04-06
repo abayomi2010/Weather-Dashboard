@@ -101,6 +101,7 @@ function renderForecast (weatherData) {
     let heading = $("<h4>");
 
     
+
     
     
     let futureForecast = weatherData.filter(function (forecast) {
@@ -109,6 +110,7 @@ function renderForecast (weatherData) {
         return forecast.dt_txt.includes("12");
         
     })
+    console.log(futureForecast)
     
     headingCol.attr("class", "col-12");
     heading.text("5-Day Forecast");
@@ -157,10 +159,9 @@ function renderForecast (weatherData) {
         description.text(iconDescription);
         
 
-
         forecastContainer.append(col);
         }
-
+        
 }
 
 
@@ -181,7 +182,6 @@ function fetchWeather (location) {
         renderCurrentWeather(city, response.list[0]);
         renderForecast(response.list)
         // console.log(response.list);
-        
         
         
     })
@@ -225,7 +225,7 @@ function handleSearchHistory(event) {
     fetchCoordinates(search);
     searchInput.val("");
     
-    
+    forecastContainer.empty();
     
 }
 
@@ -238,7 +238,7 @@ searchForm.on("submit", function(event) {
 
     fetchCoordinates(search);
     searchInput.val("");
-
+    forecastContainer.empty();
 })
 
 searchHistoryCont.on("click",  handleSearchHistory);
