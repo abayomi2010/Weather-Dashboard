@@ -2,7 +2,7 @@
 This is a weather dashboard that allows users to check the current weather and forecast for a given location. The dashboard provides users with up-to-date weather information, including temperature, humidity, wind speed, and atmospheric pressure.
 
 ## Features
-*	Users can search for any location by entering a city name or ZIP code.
+*	Users can search for any location by entering a city name.
 *	The dashboard displays the current weather information, including temperature, humidity, wind speed, and atmospheric pressure.
 *	The dashboard also displays a five-day forecast for the selected location.
 *	Users can toggle between Fahrenheit and Celsius temperature units.
@@ -21,7 +21,7 @@ This weather dashboard was built using the following technologies:
 To use the weather dashboard, follow these steps:
 1.	Clone the repository to your local machine.
 2.	Open the index.html file in your web browser.
-3.	Enter a city name or ZIP code in the search bar and click the "Search" button.
+3.	Enter a city name in the search bar and click the "Search" button.
 4.	The current weather information and the five-day forecast for the selected location will be displayed.
 
 ## API Key
